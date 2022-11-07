@@ -1,36 +1,16 @@
-# Name of workflow
 name: ci-app-test
-
-# Trigger the workflow on push or pull request
 on: push
-
-env:
-  CI: true
-
 jobs:
   build:
-
-    # The type of machine to run the job on
     runs-on: ubuntu-latest
 
-    strategy:
-      # Node versions list
-      matrix:
-        node-version: [18.x]
 
     steps:
-      - run: echo '$GITHUB_WORKFLOW'
-        # Check-out repository under GitHub workspace
-        # https://github.com/actions/checkout
+      - run: echo "Имя текущего воркфлоу: $GITHUB_WORKFLOW"W'
       - uses: actions/checkout@v2
-        # Step's name
-      - name: Use Node.js ${{ matrix.node-version }}
-        # Configures the node version used on GitHub-hosted runners
-        # https://github.com/actions/setup-node
         uses: actions/setup-node@v2
-        # The Node.js version to configure
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '18.x'
           cache: 'npm'
       - run: make setup
       - run: make start
