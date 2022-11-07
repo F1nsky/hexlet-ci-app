@@ -5,15 +5,6 @@ name: ci-app-test
 on: push
 
 jobs:
-  security:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-
   build:
     runs-on: ubuntu-latest
 
@@ -32,3 +23,7 @@ jobs:
         run: make test
       - name: Run Linter
         run: make lint
+      - name: Run Snyk
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
