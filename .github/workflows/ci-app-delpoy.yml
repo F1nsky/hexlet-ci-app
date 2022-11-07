@@ -4,26 +4,20 @@ name: ci-app-test
 # Trigger the workflow on push or pull request
 on: push
 
-env:
-  CI: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: '18.x'
 
     steps:
-      - run: echo '$GITHUB_WORKFLOW'
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - uses: make setup
-      - uses: make start
+      - run: make setup
       - run: make test
       - run: make lint
