@@ -25,7 +25,5 @@ jobs:
           cache: 'npm'
       - uses: make setup
       - uses: make start
-      - name: Run tests
       - run: make test
-      - name: Run linter
       - run: make lint
