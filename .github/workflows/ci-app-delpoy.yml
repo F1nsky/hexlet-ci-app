@@ -18,6 +18,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: make setup
+      - uses: make setup
       - run: make test
       - run: make lint
