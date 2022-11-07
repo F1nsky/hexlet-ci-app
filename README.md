@@ -1,4 +1,4 @@
-[![ci-app-delpoy](https://github.com/F1nsky/hexlet-ci-appactions/workflows/ci-app-delpoy.yml/badge.svg)](https://github.com/F1nsky/hexlet-ci-app/workflows/ci-app-delpoy.yml)
+[![ci-app-delpoy](https://github.com/F1nsky/hexlet-ci-appactions/workflows/ci-app-delpoy.yml/badge.svg)](https://github.com/F1nsky/hexlet-ci-app/actions/workflows/ci-app-delpoy.yml)
 
 # Example app for CI Hexlet course
 
