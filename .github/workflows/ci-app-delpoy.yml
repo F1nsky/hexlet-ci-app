@@ -19,7 +19,7 @@ jobs:
         node-version: [18.x]
 
     steps:
-      - run: echo "Имя текущего воркфлоу: $GITHUB_WORKFLOW"
+      - run: echo '$GITHUB_WORKFLOW'
         # Check-out repository under GitHub workspace
         # https://github.com/actions/checkout
       - uses: actions/checkout@v2
