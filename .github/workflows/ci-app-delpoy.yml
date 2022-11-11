@@ -38,5 +38,4 @@ jobs:
         uses: snyk/actions/node@master
         env:
           #Snyk authorisation
-          run: snyk auth 90dc28ff-5edc-4913-9cde-e9004a13faf8
-          #SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
